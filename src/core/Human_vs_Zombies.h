@@ -18,7 +18,7 @@
 
 #define WIFI_SCAN_PERIOD 500
 #define WIFI_SCAN_MIN_X_CH 10
-#define WIFI_SCAN_MAX_X_CH 150
+#define WIFI_SCAN_MAX_X_CH 100
 
 /* Set the SSID and Password via project configuration, or can set directly here
  */
@@ -102,6 +102,9 @@ public:
   uint8_t zombieDistace = 100;
   uint16_t humanIndex = 0;
   uint16_t zombieIndex = 0;
+  bool infected = false;
+  int8_t updateLifePoints(uint8_t enemyDistance);
+  int8_t careLifePoints(uint8_t friendlyHumanDistance);
   HumanVsZombies() {}
 #ifdef USE_IDF_METHOD
 
